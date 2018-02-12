@@ -1,4 +1,4 @@
-# ffb-nuxt
+# Nuxt Vue WP
 
 > Nuxt.js project
 
