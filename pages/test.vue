@@ -2,7 +2,9 @@
   <div>
     <section class="container">
       <div class="content">
-        ksdjfhjskdfhsdkfjhSDFSDF
+        Testcomponent<br/>
+        {{transition}}
+        <button v-on:click="test">Posts!</button>
       </div>
     </section>
   </div>
@@ -14,22 +16,35 @@ export default {
   
   data() {
     return {
+      transition: 'page',
       title: 'default'
     }
+  },
+  methods: {
+    test() {
+      this.transition = 'slide';
+      this.$router.push('/posts');
+    }
+  },
+
+  transition: {
+    enterClass:`${this.transition}-enter`,
+    enterToClass:`${this.transition}-enter-to`,
+    enterActiveClass:`${this.transition}-enter-active`,
+    leaveClass:`${this.transition}-enter`,
+    leaveToClass:`${this.transition}-enter-to`,
+    leaveActiveClass:`${this.transition}-enter-active`,
   }
-  // mounted() {
-  // 	console.log('wauw');
-  //   // this.$store.dispatch('getCategory', this.$route.params.slug)
-  //   // console.log(this.categories)
-  //   // if (this.categories.length === 0) {
-  //   //   this.$store.dispatch('getCategories')
-  //   // }
-  //   // this.$store.dispatch('getPosts')
-  // },
-  // computed: {
-  //   ...mapGetters([
-  //     'post'
-  //   ])
+
+  // transition: {
+  //   beforeEnter(el){
+  //     alert('testtest');
+  //     console.log(el);
+  //     // transition: 'fade'
+  //   }
+  // }
+  // transition: {
+  //   name: this.clicked ? 'slide' : 'page'
   // }
 }
 </script>

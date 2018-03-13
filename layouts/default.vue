@@ -21,7 +21,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   -ms-text-size-adjust: 100%;
@@ -52,10 +52,50 @@ html {
 }
 
 .page-enter-active, .page-leave-active {
-  transition: opacity .5s;
+  transition: opacity 0.5s;
 }
 .page-enter, .page-leave-to {
   opacity: 0;
 }
+
+// .slide-enter-active, .slide-leave-active {
+//   transition: opacity 20.5s;
+// }
+// .slide-enter, .slide-leave-to {
+//   opacity: 0;
+// }
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-enter-active {
+  transition: all .3s ease;
+}
+.slide-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-enter, .slide-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+/*.page-enter,
+.page-leave-to { opacity: 0 }
+
+.page-leave,
+.page-enter-to { opacity: 1 }
+
+.page-enter-active,
+.page-leave-active { transition: opacity 10000ms }*/
+
+// .page-enter { transform: translateX(100%) }
+// .page-enter-to { transform: translateX(0) }
+// .page-enter-active { position: absolute; width:100%;}
+
+// .page-leave { transform: translateX(0) }
+// .page-leave-to { transform: translateX(-100%) }
+
+// .page-enter-active,
+// .page-leave-active { transition: all 750ms ease-in-out }
 
 </style>
